@@ -27,7 +27,10 @@ const options = {
 };
 
 //SimplerLigthBox
-const lightbox = new SimpleLightbox('.gallery .gallery-item');
+const lightbox = new SimpleLightbox('.gallery .gallery-item', {
+  captionDelay: 250,
+  captionsData: 'alt',
+});
 
 //variables
 //default page for pagination
@@ -52,6 +55,7 @@ function onSearchSubmit(event) {
     });
   } else {
     Notify.warning('Enter the search value', options);
+    loadMoreButton.style.display = 'none';
   }
 }
 

@@ -1,4 +1,55 @@
-# Parcel template
+// Використати acync/await та axios +++ // Підключити axios notiflix SimpleLightbox++++
+
+// По сабміту форму зробити фетч-запит ++++ // Написати функцію фетч-запиту за параметрами++++++ //
+Повідомлення // Після першого запиту з кожним новим пошуком отримувати повідомлення, в якому буде
+написано, скільки всього знайшли зображень (властивість totalHits). Текст повідомлення - "Hooray! We
+found totalHits images."++++
+
+// Response - масив об'єктів з ключами!!!!
+
+// У відповіді буде масив зображень, що задовольнили критерії параметрів запиту. Кожне зображення
+описується об'єктом, з якого тобі цікаві тільки наступні властивості: // webformatURL - посилання на
+маленьке зображення для списку карток. // largeImageURL - посилання на велике зображення. // tags -
+рядок з описом зображення. Підійде для атрибуту alt. // likes - кількість лайків. // views -
+кількість переглядів. // comments - кількість коментарів. // downloads - кількість завантажень. //
+Якщо порожній масив - нотіфікація "Sorry, there are no images matching your search query. Please try
+again."
+
+// Рендерінг карток по шаблону - перед кожним наступним шаблоном очистити розмітку // Написати
+фунцію markup та clearMarkup
+
+// Зробити пагінацію+++++
+
+// Pixabay API підтримує пагінацію і надає параметри page і per_page. Зроби так, щоб в кожній
+відповіді приходило 40 об'єктів (за замовчуванням 20). // Початкове значення параметра page повинно
+бути 1. // З кожним наступним запитом, його необхідно збільшити на 1. // У разі пошуку за новим
+ключовим словом, значення page потрібно повернути до початкового, оскільки буде пагінація по новій
+колекції зображень.
+
+// Кнопка LOAD MORE ++++ // В початковому стані кнопка повинна бути прихована. // Після першого
+запиту кнопка з'являється в інтерфейсі під галереєю. // При повторному сабміті форми кнопка спочатку
+ховається, а після запиту знову відображається. // У відповіді бекенд повертає властивість
+totalHits - загальна кількість зображень, які відповідають критерію пошуку (для безкоштовного
+акаунту). Якщо користувач дійшов до кінця колекції, ховай кнопку і виводь повідомлення з текстом
+"We're sorry, but you've reached the end of search results.".
+
+// Бібліотека SimpleLightbox ++++ // Додати відображення великої версії зображення з бібліотекою
+SimpleLightbox для повноцінної галереї.
+
+// У розмітці необхідно буде обгорнути кожну картку зображення у посилання, як зазначено в
+документації. // Бібліотека містить метод refresh(), який обов'язково потрібно викликати щоразу
+після додавання нової групи карток зображень. // Для того щоб підключити CSS код бібліотеки в
+проект, необхідно додати ще один імпорт, крім того, що описаний в документації.
+
+// Прокручування сторінки // Зробити плавне прокручування сторінки після запиту і відтворення кожної
+наступної групи зображень. Ось тобі код-підказка, але розберися у ньому самостійно.
+
+// const { height: cardHeight } = document // .querySelector(".gallery") //
+.firstElementChild.getBoundingClientRect();
+
+// window.scrollBy({ // top: cardHeight \* 2, // behavior: "smooth", // });
+
+<!-- # Parcel template
 
 This project was created with Parcel. For familiarization and setting additional features [refer to documentation](https://parceljs.org/).
 
@@ -70,4 +121,4 @@ If a blank page opens, make sure there are no errors in the `Console` tab relate
 
 1. After each push to the `main` branch of the GitHub repository, a special script (GitHub Action) is launched from the `.github/workflows/deploy.yml` file.
 2. All repository files are copied to the server, where the project is initialized and built before deployment.
-3. If all steps are successful, the built production version of the project files is sent to the `gh-pages` branch. Otherwise, the script execution log will indicate what the problem is.
+3. If all steps are successful, the built production version of the project files is sent to the `gh-pages` branch. Otherwise, the script execution log will indicate what the problem is. -->
