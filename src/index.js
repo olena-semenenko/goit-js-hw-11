@@ -70,6 +70,15 @@ async function onLoadBtn() {
       createGalleryMarkup(data);
       loadMoreButton.style.display = 'flex';
     });
+
+  const { height: cardHeight } = document
+    .querySelector('.gallery')
+    .firstElementChild.getBoundingClientRect();
+
+  window.scrollBy({
+    top: cardHeight * 2,
+    behavior: 'smooth',
+  });
 }
 
 // fetch function
@@ -144,12 +153,3 @@ function createGalleryMarkup(data) {
     loadMoreButton.style.display = 'none';
   }
 }
-
-// const { height: cardHeight } = document
-//   .querySelector('.gallery')
-//   .firstElementChild.getBoundingClientRect();
-
-// window.scrollBy({
-//   top: cardHeight * 2,
-//   behavior: 'smooth',
-// });
