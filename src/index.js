@@ -65,7 +65,7 @@ async function onLoadBtn() {
   page += 1;
   console.log(page);
   console.log(totalPages);
-  if (page > totalPages) {
+  if (page === totalPages) {
     Notify.success(`We're sorry, but you've reached the end of search results."`, options);
     loadMoreButton.style.display = 'none';
     return;
